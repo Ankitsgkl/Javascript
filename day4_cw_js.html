@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Statistics Widget</title>
+</head>
+<body>
+  <h2>Simple Statistics Widget</h2>
+
+  <script>
+    
+    let randomNum = Math.floor(Math.random() * 100) + 1;
+
+    let userScore = "75";
+
+    let scoreNum = Number(userScore);
+
+    let difference = randomNum - scoreNum;
+
+    let roundedSqrt = Math.round(Math.sqrt(scoreNum));
+
+    let piValue = Math.PI;
+
+    let result = "50" * 2;
+
+    document.write("<b>Random Number:</b> " + randomNum + "<br>");
+    document.write("<b>User Score:</b> " + userScore + "<br>");
+    document.write("<b>Converted Score:</b> " + scoreNum + "<br>");
+    document.write("<b>Difference:</b> " + difference + "<br>");
+    document.write("<b>Rounded Square Root:</b> " + roundedSqrt + "<br>");
+    document.write("<b>Pi Value:</b> " + piValue + "<br>");
+    document.write('<b>Implicit Conversion ("50" * 2):</b> ' + result + "<br>");
+  </script>
+
+</body>
+</html>

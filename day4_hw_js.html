@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Game Result Generator</title>
+</head>
+<body>
+  <h2>Simple Game Result Generator</h2>
+
+  <script>
+
+    let mysteryLevel = Math.floor(Math.random() * 50) + 1;
+
+    let userScore = "45";
+
+    let scoreNum = Number(userScore);
+
+    let difference = Math.abs(mysteryLevel - scoreNum);
+
+    let sqrtScore = Math.sqrt(scoreNum);
+
+    let piValue = Math.PI;
+
+    let implicitResult = "20" * 5;
+
+    let highest = Math.max(10, 20, mysteryLevel);
+    let lowest = Math.min(10, 20, mysteryLevel);
+
+    document.write("<b>Mystery Level:</b> " + mysteryLevel + "<br>");
+    document.write("<b>User Score:</b> " + userScore + "<br>");
+    document.write("<b>Converted Score:</b> " + scoreNum + "<br>");
+    document.write("<b>Absolute Difference:</b> " + difference + "<br>");
+    document.write("<b>Square Root of Score:</b> " + sqrtScore.toFixed(2) + "<br>");
+    document.write("<b>Pi Value:</b> " + piValue + "<br>");
+    document.write('<b>Implicit Conversion ("20" * 5):</b> ' + implicitResult + "<br>");
+    document.write("<b>Highest Value (10, 20, Mystery Level):</b> " + highest + "<br>");
+    document.write("<b>Lowest Value (10, 20, Mystery Level):</b> " + lowest + "<br>");
+  </script>
+
+</body>
+</html>

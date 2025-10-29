@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Item Return Page</title>
+</head>
+<body>
+  <h2>Online Store - Item Return Check</h2>
+
+  <button onclick="checkReturn()">Check Return Eligibility</button>
+
+  <p id="result"></p>
+
+  <script>
+
+    let order = {
+      itemName: "Wireless Mouse",
+      isDelivered: true,
+      daysSinceDelivery: 5
+    };
+
+    function checkReturn() {
+      let message = (order.isDelivered && order.daysSinceDelivery <= 7)
+        ? "Eligible for Return"
+        : "Return Period Expired";
+
+      document.getElementById("result").innerText = message;
+
+      let hasItemName = "itemName" in order;
+      console.log("itemName exists:", hasItemName);
+
+      delete order.daysSinceDelivery;
+      console.log("Updated order object:", order);
+    }
+  </script>
+
+</body>
+</html>
