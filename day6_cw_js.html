@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Grocery Store Product List</title>
+</head>
+<body>
+  <h2>Online Grocery Store - Product Listing</h2>
+
+  <button onclick="showProducts()">Show Products</button>
+
+  <p id="output"></p>
+
+  <script>
+
+    let products = ["Apple", "Banana", "Mango", "Grapes"];
+    let prices = [50, 30, 70, 90];
+
+    function showProducts() {
+      let output = "";
+
+      let merged = products.map((item, index) => `Product: ${item} - Price: ${prices[index]}`);
+
+      output += "<b>All Products:</b><br>";
+      merged.forEach(p => output += p + "<br>");
+
+      let filtered = merged.filter((_, i) => prices[i] > 50);
+      output += "<br><b>Products with Price > 50:</b><br>";
+      filtered.forEach(p => output += p + "<br>");
+
+      products.push("Watermelon");
+      prices.push(80);
+
+      let updated = products.map((item, index) => `Product: ${item} - Price: ${prices[index]}`);
+      output += "<br><b>Updated Product List:</b><br>";
+      updated.forEach(p => output += p + "<br>");
+
+      document.getElementById("output").innerHTML = output;
+    }
+  </script>
+
+</body>
+</html>
