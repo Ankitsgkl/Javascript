@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Grocery Store Calculator</title>
+</head>
+<body>
+  <h2>Grocery Store Calculator</h2>
+
+  <button onclick="startBilling()">Start Billing</button>
+
+  <p id="output"></p>
+
+  <script>
+    function startBilling() {
+      let output = "";
+      let purchases = 0;
+      while (purchases < 5) {
+        let code = parseInt(prompt("Enter Product Code (1-3):"));
+        let qty = parseInt(prompt("Enter Quantity:"));
+
+        let itemName, pricePerItem, total = 0;
+
+        switch (code) {
+          case 1:
+            itemName = "Apple";
+            pricePerItem = 30;
+            break;
+          case 2:
+            itemName = "Banana";
+            pricePerItem = 10;
+            break;
+          case 3:
+            itemName = "Mango";
+            pricePerItem = 50;
+            break;
+          default:
+            alert("Invalid code! Skipping this entry...");
+            continue;
+        }
+
+        total = pricePerItem * qty;
+
+        let message = "";
+        if (total > 100) {
+          message = "High purchase";
+        } else {
+          message = "Normal purchase";
+        }
+
+        output += `Product: ${itemName} | Quantity: ${qty} | Total: ₹${total} (${message})<br>`;
+        purchases++;
+      }
+
+      document.getElementById("output").innerHTML = "<b>Purchase Summary:</b><br>" + output;
+    }
+  </script>
+
+</body>
+</html>

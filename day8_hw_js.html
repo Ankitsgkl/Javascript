@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Simple Guessing Game</title>
+</head>
+<body>
+  <h2>Number Guessing Game</h2>
+  <button onclick="startGame()">Start Game</button>
+  <p id="result"></p>
+
+  <script>
+    function startGame() {
+      let output = "";
+      let chances = 0;
+
+      while (chances < 5) {
+        let guess = parseInt(prompt("Enter a number between 1 and 5:"));
+
+        if (guess < 1 || guess > 5 || isNaN(guess)) {
+          alert("Invalid input! You lost this chance.");
+          continue;
+        }
+
+        chances++;
+
+        let word = "";
+        switch (guess) {
+          case 1: word = "One"; break;
+          case 2: word = "Two"; break;
+          case 3: word = "Three"; break;
+          case 4: word = "Four"; break;
+          case 5: word = "Five"; break;
+        }
+
+        output += `You entered: ${word}<br>`;
+
+        if (guess === 3) {
+          output += "<b>You guessed it right!</b><br>";
+          break;
+        } else {
+          output += "Wrong guess. Try again.<br><br>";
+        }
+      }
+
+      if (chances === 5) {
+        output += "<b>Game Over!</b>";
+      }
+
+      document.getElementById("result").innerHTML = output;
+    }
+  </script>
+</body>
+</html>
