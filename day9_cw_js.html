@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>User Comment System</title>
+</head>
+<body>
+  <h2>Comment Checker</h2>
+  <p>Open the console to see the result.</p>
+
+  <script>
+    let comment = "My son is 12 years old. Our flat number is 45 and contact is 9876543210.";
+
+    let numberPattern = /\d+/g;
+
+    let hasNumber = numberPattern.test(comment);
+
+    let updatedComment = comment.replace(/\d+/g, "NUMBER");
+
+    console.log("Original Comment:", comment);
+    console.log("Contains Number:", hasNumber);
+    console.log("Updated Comment:", updatedComment);
+  </script>
+</body>
+</html>

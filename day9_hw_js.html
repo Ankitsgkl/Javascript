@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Comment Filtering System</title>
+</head>
+<body>
+  <h2>Blog Comment Filter</h2>
+  <p>Open the console to see the output.</p>
+
+  <script>
+    let comment = "I think this movie was BAD and 100% Stupid! But the Acting was Amazing and 3 actors were great.";
+
+    function filterComment(comment) {
+
+      let cleanedComment = comment.replace(/\b(bad|ugly|stupid)\b/gi, "***");
+
+      let numberCount = (comment.match(/\d+/g) || []).length;
+
+      let capitalizedWords = (comment.match(/\b[A-Z][a-z]*/g) || []).length;
+      return `
+      Cleaned Comment: ${cleanedComment}
+      Numbers Found: ${numberCount}
+      Words Starting with Capital Letter: ${capitalizedWords}
+      `;
+    }
+
+    console.log(filterComment(comment));
+  </script>
+</body>
+</html>
