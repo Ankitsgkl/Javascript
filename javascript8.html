@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Convert celcius to farenheit</title>
+</head>
+<body>
+    <p id="celcius"></p>
+    <p id="farenheit"></p>
+
+    <script>
+        var celcius = 100;
+        var farenheit = (celcius * 9/5) + 32;
+
+        document.getElementById("celcius").innerHTML = "Celcius: " + celcius;
+        document.getElementById("farenheit").innerHTML = "Farenheit: " + farenheit;
+    </script>
+</body>
+</html>

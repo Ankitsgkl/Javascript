@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>solve quadratic equations</title>
+</head>
+<body>
+    <p id="a"></p>
+    <p id="b"></p>
+    <p id="c"></p>
+    <p id="root1"></p>
+    <p id="root2"></p>
+
+    <script>
+        var a = 1;
+        var b = -3;
+        var c = 2;
+
+        var discriminant = b * b - 4 * a * c;
+        var root1 = (-b + Math.sqrt(discriminant)) / (2 * a);
+        var root2 = (-b - Math.sqrt(discriminant)) / (2 * a);
+
+        document.getElementById("a").innerHTML = "Coefficient a: " + a;
+        document.getElementById("b").innerHTML = "Coefficient b: " + b;
+        document.getElementById("c").innerHTML = "Coefficient c: " + c;
+        document.getElementById("root1").innerHTML = "Root 1: " + root1;
+        document.getElementById("root2").innerHTML = "Root 2: " + root2;
+    </script>
+</body>
+</html>

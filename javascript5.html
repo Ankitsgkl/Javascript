@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>variable swap</title>
+</head>
+<body>
+    <p id="var1"></p>
+    <p id="var2"></p>
+
+    <script>
+        var x = 11;
+        var y = 22;
+
+        var temp = x;
+        x = y;
+        y = temp;
+
+        document.getElementById("var1").innerHTML = "First Variable after swap: " + x;
+        document.getElementById("var2").innerHTML = "Second Variable after swap: " + y;
+        
+    </script>
+</body>
+</html>
